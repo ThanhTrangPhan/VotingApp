@@ -1,0 +1,490 @@
+:root{
+  --grey-one:   #333333;
+  --grey-two:   #f2ecff;
+  --grey-three: #ababab;
+  --grey-four:  #f2ecff;
+  --yellow:     #f9f871;
+  --color-2:    #4a4857;
+  --white:      #faf7ff;
+
+  --nav-height: 5vh;
+  --footer-height: 10vh;
+  --active-height: 22vh;
+  --archived-height: 11vh;
+  --options-box-height: 25vh;
+  --input-width: 80%;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 25px;
+
+  --radius-0: 10px;
+  --radius-1: 16px;
+  --radius-2: 50px;
+}
+
+body {
+  margin: 0;
+  font-family: Palatino, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0 var(--space-2) 0 var(--space-2);
+  background-color: var(--grey-one);
+  height: var(--nav-height);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--grey-one);
+  height: var(--footer-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+  margin-bottom: var(--space-1);
+}
+
+.socialIcon {
+  margin-left: var(--space-1);
+  margin-right: var(--space-1);
+  color: var(--white);
+}
+
+main {
+  position: fixed;
+  left: 0;
+  top: var(--nav-height);
+  background-color: var(--grey-two);
+  height: calc(100vh - var(--nav-height) - var(--footer-height));
+}
+
+.navElement {
+  padding: calc(var(--nav-height)/6);
+  color: var(--yellow);
+  text-decoration: none;
+  margin-right: var(--space-3);
+}
+.navElement:hover {
+  background-color: var(--color-2);
+}
+
+.flexGrow {
+  flex-grow: 1;
+}
+
+#mainTitle {
+  color: var(--grey-one);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+#mainContent {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* --- Dashboard --- */
+
+#dashboardPollList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  margin-bottom: var(--space-3);
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Dashboard - ActiveListElement */
+.activeListElement {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-2);
+  height: var(--active-height);
+  border-radius: var(--radius-1);
+}
+
+.activeListElLeftSide {
+  flex-basis: 40%;
+  padding: var(--space-1);
+}
+
+.activeListElRightSide {
+  flex-basis: 60%;
+  width: 100%;
+  padding: var(--space-2);
+  /*background-color: var(--grey-four);*/
+}
+
+.activeListTitle {
+  color: var(--yellow);
+  font-size: 1.5em;
+}
+
+.activeListDesc {
+  color: var(--white);
+}
+
+#arrowLeft {
+  position: fixed;
+  top: 46%;
+  left: 3vw;
+  background: transparent;
+  border: none;
+}
+
+#arrowRight {
+  position: fixed;
+  top: 46%;
+  right: 3vw;
+  background: transparent;
+  border: none;
+}
+/* --------- */
+
+
+/* --- New Poll --- */
+#newPoll {
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#newPollContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 75vw;
+  max-width: 600px;
+  height: 80vh;
+  background-color: var(--color-2);
+  border-radius: var(--radius-2);
+}
+
+#newPollTitle {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--white);
+}
+
+#newPollName {
+  width: var(--input-width);
+  height: 30px;
+  padding: 8px;
+  font-size: 1.5em;
+  background-color: var(--white);
+  border-radius: var(--radius-0);
+  margin-bottom: var(--space-2);
+}
+
+#newPollDesc {
+  width: var(--input-width);
+  height: 120px;
+  padding: 8px;
+  font-size: 1.2em;
+  background-color: var(--white);
+  border-radius: var(--radius-0);
+  margin-bottom: var(--space-2);
+}
+
+#newPollDatePicker {
+  width: var(--input-width);
+  height: 30px;
+  background-color: var(--white);
+  border-radius: var(--radius-0);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+#newPollOptionsBox {
+  height: var(--options-box-height);
+  width: var(--input-width);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+#newPollOptionsList {
+  overflow-y: scroll;
+  height: var(--options-box-height);
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newPollOptionElement {
+  width: 80%;
+  margin-bottom: var(--space-1);
+  display: flex;
+  flex-direction: row;
+}
+
+.newPollOptionText {
+  height: 18px;
+  padding: 8px;
+  flex-grow: 1;
+}
+
+.newPollOptionDelete {
+  color: var(--yellow);
+  background-color: var(--grey-one);
+  text-decoration: none;
+  border: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  margin-left: var(--space-1);
+}
+
+#newPollAddNewBtnContainer {
+  display: flex;
+  width: var(--input-width);
+  flex-direction: row;
+  min-height: 30px;
+}
+#newPollAddNewOption {
+  color: var(--yellow);
+  background-color: var(--grey-one);
+  text-decoration: none;
+  border: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+#newPollSend {
+  height: 30px;
+  color: var(--yellow);
+  background-color: var(--grey-one);
+  font-size: 1.5em;
+  text-decoration: none;
+  border: none;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-0);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.newPollLabel {
+  color: var(--white);
+}
+
+.react-datepicker__input-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+/* --------- */
+
+
+/* --- History --- */
+#historyPollList {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  margin-bottom: var(--space-3);
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.archivedListElement {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-2);
+  height: var(--archived-height);  
+  border-radius: var(--radius-1);
+  margin-bottom: var(--space-3);
+  color: var(--yellow)  ;
+  align-items: center;
+  justify-content: center;
+}
+/* --------- */
+
+
+/* --- Poll Details --- */
+#pollDetails {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-2);
+  border-radius: var(--radius-2);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);  
+}
+
+#pollDetailsLeft {
+  flex-basis: 50%;
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+}
+
+#pollDetailsRight {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dougnutContainer {
+  width: 75%;
+  height: 75%;
+}
+
+#pollDetailsTitle {
+  font-size: 2.4em;
+  color: var(--yellow);
+}
+
+.pollDetailsText {
+  font-size: 1.3em;
+  color: var(--white);
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.pollDetails2ndTitle {
+  color: var(--white);
+  font-size: 1.4em;
+}
+
+#voteList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.voteOption {
+  padding: var(--space-2);
+  color: var(--grey-one);
+  border-radius: var(--radius-0);
+  background-color: var(--yellow);
+  margin-bottom: var(--space-2);
+}
+/* --------- */
+
+
+
+/* --- */
+/** Mobile*/
+@media only screen and (max-width: 600px) {
+  #mainContent {
+    overflow-y: scroll;
+  }
+  
+  #dashboardPollList {
+    width: 94%;
+    height: auto;
+  }
+
+  .activeListTitle {
+    margin: 0;
+    text-align: center;
+  }
+
+  .activeListDesc {
+    text-align: center;
+  }
+
+  .activeListElement {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: var(--space-2);
+  }
+
+  .activeListElRightSide {
+    width: auto;
+  }
+
+
+  #arrows {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    margin: var(--space-3);
+  }
+
+  #arrowLeft {
+    position: static;
+  }
+
+  #arrowRight {
+    position: static;
+  }
+
+  #newPollContainer {
+    width: 95vw;
+    max-width: 95vw;
+    height: 200%;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
+  #pollDetails {
+    width: 94%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  #dougnutContainer {
+    width: 85vw;
+    height: auto;
+    min-height: 85vw;
+  }
+
+  #newPoll {
+    overflow-y: scroll;
+    align-items: unset;
+    
+  }
+}
